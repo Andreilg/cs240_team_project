@@ -47,7 +47,8 @@ The aims of this application are as follows:
 
     - **Get Balance** is in $O(1)$ in the worst case
       - Should be immediate
-
+    - **Get Account Number** is in $O(1)$ in the worst case
+      - Should be immediate
     - **Deposit Money** is in $O(1)$ in the worst case
       - Should be immediate
     - **Withdraw Money** is in $O(1)$ in the worst case
