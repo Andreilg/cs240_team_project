@@ -20,7 +20,7 @@ public:
     bool append(int money);
     bool transfer(size_t from, size_t to, int money);
     std::string toString();
-
+    bool deleteAccount(size_t acc);
 };
 
 #endif

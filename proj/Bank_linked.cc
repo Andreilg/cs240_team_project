@@ -122,13 +122,40 @@ std::string Bank_linked::toString(){
     return ret;
 }
 
+bool Bank_linked::deleteAccount(size_t acc){
+  Account_node* prev;
+  curr = head->getNext();
+  //if first element is removed
+  if(head->getNext()->getAccount().getAccountNum() == acc){
+    Account_node* removed = head->getNext();
+    head->setNext(removed->getNext());
+    free(removed);
+    size -=1;
+    return true;
+  }
+  while(curr->getAccount().getAccountNum() <= acc){
+    if(curr->getAccount().getAccountNum() == acc){
+      prev->setNext(curr->getNext());
+      free(curr);
+      size-=1;
+      return true;
+    }
+    prev = curr;
+    curr = curr->getNext();
+  }
+
+  return false;
+}
+
 int main(){
   Bank_linked test;
   test.append(5);
   test.append(6);
   test.append(7);
   std::cout<<test.toString()<<std::endl;
-  test.transfer(1,2,3);
+  std::cout<< test.deleteAccount(1) <<std::endl;
+  std::cout<< test.deleteAccount(2) <<std::endl;
+  std::cout<< test.deleteAccount(3) <<std::endl;
   std::cout<<test.toString()<<std::endl;
   return 0;
 }
