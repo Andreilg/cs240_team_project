@@ -3,7 +3,7 @@
 #include<istream>
 #include<cstdlib>
 
-#include"Bank_linked.h"
+#include"Bank_linked.hh"
 
 using namespace std;
 
