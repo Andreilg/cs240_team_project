@@ -1,30 +1,30 @@
 #include "Account_node.hh"
 
 
-Account_node::Account_node(Account_node *next) :
-        acc(-1), next(next)
+Account_node::Account_node() :
+        acc(-1), next(nullptr)
 {}
 
-Account_node::Account_node(int money, Account_node *next) :
-        acc(money), next(next)
+Account_node::Account_node(int _money, Account_node *_next) :
+        acc(_money), next(_next)
 {}
 
-Account Account_node::element()
+Account Account_node::getElement()
 {
-    return this->acc;
+    return acc;
 }
 
-Account Account_node::setElement(Account _acc)
+void Account_node::setElement(Account _acc)
 {
-    return this->acc = _acc;
+    acc = _acc;
 }
 
-Account_node *Account_node::next_node()
+Account_node *Account_node::getNext()
 {
-    return this->next;
+    return next;
 }
 
-Account_node *Account_node::setNext(Account_node *_next)
+void *Account_node::setNext(Account_node *_next)
 {
-    return this->next = _next;
+    next = _next;
 }

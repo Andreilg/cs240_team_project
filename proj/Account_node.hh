@@ -10,17 +10,17 @@ private:
     Account acc;
     Account_node *next;
 public:
-    Account_node(int money, Account_node *next);
+    Account_node();
 
-    Account_node(Account_node *next);
+    Account_node(int _money, Account_node *_next);
 
-    Account element();
+    Account getElement();
 
-    Account setElement(Account _acc);
+    void setElement(Account _acc);
 
-    Account_node *next_node();
+    Account_node *getNext();
 
-    Account_node *setNext(Account_node *_next);
+    void *setNext(Account_node *_next);
 };
 
 #endif //PROJ_ACCOUNT_NODE_HH

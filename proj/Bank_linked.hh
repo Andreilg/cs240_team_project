@@ -8,9 +8,9 @@
 class Bank_linked
 {
 private:
-    Account_node curr = new Account_node(nullptr);
-    Account_node tail = curr;
-    Account_node head = new Account_node(tail);
+    Account_node *curr = new Account_node();
+    Account_node *tail = curr;
+    Account_node *head = new Account_node(tail);
     int size = 0;
 public:
     Bank_linked();
