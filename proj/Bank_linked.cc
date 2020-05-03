@@ -86,21 +86,28 @@ bool Bank_linked::append(int money)
     tail->setNext(new Account_node());
     auto *temp = new Account(money);
     tail->setAccount(*temp);
+    tail = tail->getNext();
     size++;
     return true;
 }
 
 std::string Bank_linked::toString(){
     std::string ret = "";
-    for(curr = head->getNext(); curr != tail; curr->setNext(curr->getNext())){
+    curr = head->getNext();
+    while(curr != tail){
       ret+= curr->getAccount().toString();
-      ret+= "-> ";
+      ret+= " -> ";
+      curr = (curr->getNext());
     }
     ret += "NULL";
     return ret;
 }
 
 int main(){
-
+  Bank_linked test;
+  test.append(5);
+  test.append(6);
+  test.append(7);
+  std::cout<<test.toString()<<std::endl;
   return 0;
 }
