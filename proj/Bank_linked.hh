@@ -1,7 +1,7 @@
 #ifndef ACCOUNT_HH_
 #define BANK_HH_
 
-#include<list>
+#include <list>
 #include "Account.hh"
 #include "Account_node.hh"
 
@@ -17,7 +17,8 @@ public:
 
     Account find_Account(size_t _unique_ID);
 
-    // bool append(int money);
+    bool append(int money);
+    std::string toString();
 };
 
 #endif

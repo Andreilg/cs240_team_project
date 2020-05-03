@@ -81,12 +81,26 @@ Account Bank_linked::find_Account(size_t _unique_ID)
 }
 
 
-/*bool append(int money)
+bool Bank_linked::append(int money)
 {
-    tail.setNext(new Account_node(nullptr));
+    tail->setNext(new Account_node());
     auto *temp = new Account(money);
-    tail.setAccount(*temp);
-    tail = tail.next_node();
+    tail->setAccount(*temp);
     size++;
     return true;
-}*/
+}
+
+std::string Bank_linked::toString(){
+    std::string ret = "";
+    for(curr = head->getNext(); curr != tail; curr->setNext(curr->getNext())){
+      ret+= curr->getAccount().toString();
+      ret+= "-> ";
+    }
+    ret += "NULL";
+    return ret;
+}
+
+int main(){
+
+  return 0;
+}

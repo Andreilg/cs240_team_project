@@ -1,5 +1,7 @@
 # include "Account.hh"
 
+size_t unique_num = 0;
+
 Account::Account(int money) :
         unique_ID(unique_num++), money(money)
 {}
@@ -54,3 +56,11 @@ std::string Account::toString() const
     return "account number :: " + std::to_string(this->unique_ID) + " deposit money value :: " +
            std::to_string(this->money);
 }
+
+/*int main(){
+  Account test(1);
+  Account test2(2);
+  std::cout<<test.toString()<<std::endl;
+  std::cout<<test2.toString()<<std::endl;
+  return 0;
+}*/

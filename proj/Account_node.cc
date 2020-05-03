@@ -28,3 +28,7 @@ void *Account_node::setNext(Account_node *_next)
 {
     next = _next;
 }
+
+int main(){
+  return 0;
+}

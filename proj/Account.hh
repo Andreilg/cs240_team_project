@@ -5,7 +5,7 @@
 #include<iostream>
 #include<string>
 
-size_t unique_num = 1;
+extern size_t unique_num;
 
 class Account
 {
