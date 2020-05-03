@@ -16,6 +16,9 @@ public:
 
     Account getAccount();
 
+    void withdraw(int n);
+    void deposit(int n);
+
     void setAccount(Account _acc);
 
     Account_node *getNext();

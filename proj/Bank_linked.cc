@@ -68,19 +68,20 @@ Bank_linked::Bank_linked()
     size = 0;
 }
 
-Account Bank_linked::find_Account(size_t _unique_ID)
+Account_node* Bank_linked::find_Account(size_t _unique_ID)
 {
     for (curr = head->getNext();
-         curr != tail; curr->setNext(curr->getNext()->getNext()))
+         curr != tail; curr = curr->getNext())
     {
         if (curr->getAccount().getAccountNum() == _unique_ID)
         {
-            return curr->getAccount();
+            return curr;
         }
     }
 }
 
 
+//appends new bank account to the end of the list
 bool Bank_linked::append(int money)
 {
     tail->setNext(new Account_node());
@@ -88,6 +89,24 @@ bool Bank_linked::append(int money)
     tail->setAccount(*temp);
     tail = tail->getNext();
     size++;
+    std::cout<<size<<std::endl;
+    return true;
+}
+//returns true if transfer is sucessfull, else false
+bool Bank_linked::transfer(size_t from, size_t to, int money)
+{
+    if(size < from || size < to){
+      return false;
+    }
+    Account_node* fromAcc = find_Account(from);
+    Account_node* toAcc = find_Account(to);
+    if(fromAcc->getAccount().getBalance() < money){
+      return false;
+    }
+    else{
+      fromAcc->withdraw(money);
+      toAcc->deposit(money);
+    }
     return true;
 }
 
@@ -108,6 +127,8 @@ int main(){
   test.append(5);
   test.append(6);
   test.append(7);
+  std::cout<<test.toString()<<std::endl;
+  test.transfer(1,2,3);
   std::cout<<test.toString()<<std::endl;
   return 0;
 }

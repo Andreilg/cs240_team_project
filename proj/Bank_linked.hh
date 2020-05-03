@@ -15,10 +15,12 @@ private:
 public:
     Bank_linked();
 
-    Account find_Account(size_t _unique_ID);
+    Account_node* find_Account(size_t _unique_ID);
 
     bool append(int money);
+    bool transfer(size_t from, size_t to, int money);
     std::string toString();
+
 };
 
 #endif
