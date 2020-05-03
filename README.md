@@ -45,7 +45,7 @@ The aims of this application are as follows:
 
   - *Procedures*
 
-    - **Get Money Amount** is in $O(1)$ in the worst case
+    - **Get Balance** is in $O(1)$ in the worst case
       - Should be immediate
 
     - **Deposit Money** is in $O(1)$ in the worst case
