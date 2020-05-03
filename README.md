@@ -29,6 +29,8 @@ The aims of this application are as follows:
       - Minimum of $100 deposit.
     - **Delete Account** is in $O(n^2)$ in the worst case
       - Can take a long time; not critical
+    - **Find Account** is in $O(n)$ in the worst case
+      - Should take a reasonable amount of time
     - **Transfer Money** is in $O(n)$ in the worst case
       - Should take a reasonable amount of time
 
