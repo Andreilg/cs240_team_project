@@ -71,7 +71,7 @@ Bank_linked::Bank_linked()
 Account Bank_linked::find_Account(size_t _unique_ID)
 {
     for (curr = head->getNext();
-         curr->getNext() != nullptr; curr->setNext(curr->getNext()->getNext()))
+         curr != tail; curr->setNext(curr->getNext()->getNext()))
     {
         if (curr->getAccount().getAccountNum() == _unique_ID)
         {
