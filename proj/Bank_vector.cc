@@ -1,0 +1,25 @@
+#ifndef ACCOUNT_HH_
+#define BANK_HH_
+
+#include<list>
+#include<bits/stdc++.h>
+#include "Account.h"
+using namespace std; 
+
+class Bank_vector{
+private:
+	Account* account;
+	vector<Account*> bank_vector;
+public:
+	
+Bank_vector(int money);
+Account* getAccount();
+void readnmakeAccounts(istream& in);
+Account* findAccount(size_t acc);
+void addAccount(int money);
+void deleteAccount(size_t accountNum);
+void transfer(size_t from, size_t to, int money);
+
+};
+
+#endif
