@@ -17,6 +17,7 @@ public:
     Account getAccount();
 
     void withdraw(int n);
+
     void deposit(int n);
 
     void setAccount(Account _acc);

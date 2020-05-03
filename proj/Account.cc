@@ -5,9 +5,10 @@ size_t unique_num = 1;
 Account::Account(int money) :
         unique_ID(unique_num), money(money)
 {
-  if(money != -1){
-    unique_num++;
-  }
+    if (money != -1)
+    {
+        unique_num++;
+    }
 }
 
 /*// Return next account read from in, Return nullptr on EOF

@@ -24,13 +24,16 @@ Account_node *Account_node::getNext()
     return next;
 }
 
-void Account_node::withdraw(int n){
-  acc.withdrawMoney(n);
+void Account_node::withdraw(int n)
+{
+    acc.withdrawMoney(n);
 }
 
-void Account_node::deposit(int n){
-  acc.depositMoney(n);
+void Account_node::deposit(int n)
+{
+    acc.depositMoney(n);
 }
+
 void *Account_node::setNext(Account_node *_next)
 {
     next = _next;
