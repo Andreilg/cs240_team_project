@@ -8,27 +8,16 @@
 class Bank_linked
 {
 private:
-    Account_node *curr = new Account_node();
-    Account_node *tail = curr;
-    Account_node *head = new Account_node(tail);
-    int size = 0;
+    Account_node *curr;
+    Account_node *tail;
+    Account_node *head;
+    int size;
 public:
     Bank_linked();
 
-    bool insert(int money)
-    {
-        curr.setNext(new Account_node(money, curr.next_node()));
-    }
+    Account find_Account(size_t _unique_ID);
 
-    bool append(int money)
-    {
-        tail.setNext(new Account_node(nullptr));
-        auto *temp = new Account(money);
-        tail.setElement(*temp);
-        tail = tail.next_node();
-        size++;
-        return true;
-    }
+    // bool append(int money);
 };
 
 #endif

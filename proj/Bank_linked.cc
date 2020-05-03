@@ -61,4 +61,32 @@ Bank_linked *Bank_linked::newAccount(Account *acc)
         head(new Account_node(this->tail)), size(0)
 {}*/
 Bank_linked::Bank_linked()
-= default;
+{
+    curr = tail = new Account_node();
+    head = new Account_node();
+    head->setNext(tail);
+    size = 0;
+}
+
+Account Bank_linked::find_Account(size_t _unique_ID)
+{
+    for (curr = head->getNext();
+         curr->getNext() != nullptr; curr->setNext(curr->getNext()->getNext()))
+    {
+        if (curr->getAccount().getAccountNum() == _unique_ID)
+        {
+            return curr->getAccount();
+        }
+    }
+}
+
+
+/*bool append(int money)
+{
+    tail.setNext(new Account_node(nullptr));
+    auto *temp = new Account(money);
+    tail.setAccount(*temp);
+    tail = tail.next_node();
+    size++;
+    return true;
+}*/

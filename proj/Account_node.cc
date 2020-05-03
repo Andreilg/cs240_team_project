@@ -9,12 +9,12 @@ Account_node::Account_node(int _money, Account_node *_next) :
         acc(_money), next(_next)
 {}
 
-Account Account_node::getElement()
+Account Account_node::getAccount()
 {
     return acc;
 }
 
-void Account_node::setElement(Account _acc)
+void Account_node::setAccount(Account _acc)
 {
     acc = _acc;
 }

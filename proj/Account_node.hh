@@ -14,9 +14,9 @@ public:
 
     Account_node(int _money, Account_node *_next);
 
-    Account getElement();
+    Account getAccount();
 
-    void setElement(Account _acc);
+    void setAccount(Account _acc);
 
     Account_node *getNext();
 
