@@ -5,24 +5,27 @@
 #include<iostream>
 #include<string>
 
-class Account{
+class Account
+{
 public:
-	uint64_t unique;
-	signed int money;
+    size_t unique;
+    signed int money;
 
-Account(uint64_t unique, int money);
-Account(uint64_t unique);
-std::string toString() const;
+    Account(size_t unique, int money);
 
-static std::unique_ptr<Account> read(std::istream & in);
+    Account(size_t unique);
 
-int depositValue();
+    std::string toString() const;
 
-uint64_t accountNum();
+    static std::unique_ptr<Account> read(std::istream &in);
 
-void depositMoney(int moneyIn);
+    int depositValue();
 
-void withdrawMoney(int moneyOut);
+    size_t accountNum();
+
+    void depositMoney(int moneyIn);
+
+    void withdrawMoney(int moneyOut);
 
 };
 
