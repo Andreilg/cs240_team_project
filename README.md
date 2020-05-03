@@ -16,7 +16,7 @@ The aims of this application are as follows:
 
 ## Requirements
 
-- Account Database
+- Bank
 
   - Container class that stores ***Account*** records
   - Expected to scale well with a large amount of accounts
