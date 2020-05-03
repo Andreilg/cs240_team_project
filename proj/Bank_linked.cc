@@ -1,7 +1,7 @@
 #include "Bank_linked.hh"
 
 Bank_linked::Bank_linked() :
-        acc(), next(NULL)
+        acc(), next(nullptr)
 {}
 
 
@@ -25,7 +25,7 @@ Account *Bank_linked::readUserInfo(std::istream &in)
 
 Bank_linked *Bank_linked::createBank_linked(Bank_linked *head, Account *acc)
 {
-    if (head == NULL)
+    if (head == nullptr)
     {
         return newAccount(acc);
     }
@@ -57,7 +57,7 @@ Bank_linked *Bank_linked::newAccount(Account *acc)
 {
     Bank_linked *bank_linked = new Bank_linked;
     bank_linked->acc = acc;
-    bank_linked->next = NULL;
+    bank_linked->next = nullptr;
     return bank_linked;
 }
 

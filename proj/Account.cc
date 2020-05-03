@@ -1,14 +1,10 @@
 # include "Account.hh"
 
-Account::Account(size_t unique, int money) :
-        unique(unique), money(money)
+Account::Account(int money) :
+        unique_ID(unique_num++), money(money)
 {}
 
-Account::Account(size_t unique) :
-        unique(unique), money(100)
-{}
-
-// Return next account read from in, Return nullptr on EOF
+/*// Return next account read from in, Return nullptr on EOF
 std::unique_ptr<Account> Account::read(std::istream &in)
 {
     size_t unique;
@@ -19,42 +15,42 @@ std::unique_ptr<Account> Account::read(std::istream &in)
         return std::make_unique<Account>(unique);
     }
     return std::make_unique<Account>(unique, money);
+}*/
+
+size_t Account::getAccountNum() const
+{
+    return this->unique_ID;
 }
 
-int Account::depositValue()
+int Account::getBalance() const
 {
-    return money;
-}
-
-size_t Account::accountNum()
-{
-    return unique;
+    return this->money;
 }
 
 void Account::depositMoney(int moneyIn)
 {
-    money += moneyIn;
-    std::cout << "your current value :: " << money << std::endl;
+    this->money += moneyIn;
+    std::cout << "Your current balance :: " << this->money << std::endl;
 }
 
 void Account::withdrawMoney(int moneyOut)
 {
-    if ((money - moneyOut) > 0)
+    if ((this->money - moneyOut) >= 0)
     {
-        money -= moneyOut;
-        std::cout << "Money deposit successfully" << std::endl;
-        std::cout << "your current value :: " << money << std::endl;
+        this->money -= moneyOut;
+        std::cout << "Money deposited successfully" << std::endl;
+        std::cout << "Your current balance :: " << this->money << std::endl;
     }
     else
     {
-        std::cout << "you cannot withdraw that amount of money, the value go below 0." << std::endl;
-        std::cout << "your current value :: " << money << std::endl;
+        std::cout << "You cannot withdraw that amount of money, "
+                     "the value is greater than your balance" << std::endl;
+        std::cout << "Your current balance :: " << this->money << std::endl;
     }
 }
 
-
 std::string Account::toString() const
 {
-    return "account number :: " + std::to_string(unique) + " deposit money value :: " +
-           std::to_string(money);
+    return "account number :: " + std::to_string(this->unique_ID) + " deposit money value :: " +
+           std::to_string(this->money);
 }

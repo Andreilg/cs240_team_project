@@ -5,28 +5,27 @@
 #include<iostream>
 #include<string>
 
+size_t unique_num = 1;
+
 class Account
 {
+private:
+    size_t unique_ID;
+    int money;
 public:
-    size_t unique;
-    signed int money;
+    explicit Account(int money);
 
-    Account(size_t unique, int money);
+    //static std::unique_ptr<Account> read(std::istream &in);
 
-    Account(size_t unique);
+    [[nodiscard]] size_t getAccountNum() const;
 
-    std::string toString() const;
-
-    static std::unique_ptr<Account> read(std::istream &in);
-
-    int depositValue();
-
-    size_t accountNum();
+    [[nodiscard]] int getBalance() const;
 
     void depositMoney(int moneyIn);
 
     void withdrawMoney(int moneyOut);
 
+    [[nodiscard]] std::string toString() const;
 };
 
 #endif
