@@ -6,7 +6,7 @@ CXX = g++
 CXXFLAGS = -g -Wall -std=c++17
 
 #produce a list of all cc files which do not have main in their name
-CXX_FILES = $(shell ls *.cc | grep -v main)
+CXX_FILES = $(shell ls *.cc | grep -v bank_main)
 
 #main cc files:
 MAIN_CXX_FILES = $(wildcard *bank_main*.cc)
@@ -17,7 +17,7 @@ OFILES = $(CXX_FILES:cc=o)
 #dir in which to generate dependences
 DEPDIR = .deps
 
-TARGETS = main test-main
+TARGETS = bank_main
 
 all:		$(TARGETS) .gitignore
 
