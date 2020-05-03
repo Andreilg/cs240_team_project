@@ -1,6 +1,6 @@
 # include "Account.hh"
 
-size_t unique_num = 0;
+size_t unique_num = 1;
 
 Account::Account(int money) :
         unique_ID(unique_num++), money(money)
