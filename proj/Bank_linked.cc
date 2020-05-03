@@ -1,14 +1,11 @@
 #include "Bank_linked.hh"
 
-Bank_linked::Bank_linked() :
-        acc(), next(nullptr)
+/*Bank_linked::Bank_linked(int money) :
+        acc(new Account(money)), next(nullptr), prev(nullptr)
 {}
-
 
 Account *Bank_linked::readUserInfo(std::istream &in)
 {
-
-    Account *acc = new Account(0, 0);
     size_t account;
     if (!(in >> account)) return nullptr;
     int money;
@@ -21,7 +18,6 @@ Account *Bank_linked::readUserInfo(std::istream &in)
     acc->money = money;
     return acc;
 }
-
 
 Bank_linked *Bank_linked::createBank_linked(Bank_linked *head, Account *acc)
 {
@@ -45,7 +41,6 @@ void Bank_linked::transfer(size_t from, size_t to, int money)
 
 }
 
-
 std::string Bank_linked::showAccount(size_t accountNum)
 {
     Account account(0, 0);
@@ -59,5 +54,11 @@ Bank_linked *Bank_linked::newAccount(Account *acc)
     bank_linked->acc = acc;
     bank_linked->next = nullptr;
     return bank_linked;
-}
+}*/
 
+/*Bank_linked::Bank_linked() :
+        tail(new Account_node(nullptr)), curr(tail),
+        head(new Account_node(this->tail)), size(0)
+{}*/
+Bank_linked::Bank_linked()
+= default;

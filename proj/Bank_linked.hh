@@ -3,25 +3,32 @@
 
 #include<list>
 #include "Account.hh"
+#include "Account_node.hh"
 
 class Bank_linked
 {
+private:
+    Account_node curr = new Account_node(nullptr);
+    Account_node tail = curr;
+    Account_node head = new Account_node(tail);
+    int size = 0;
 public:
-    Account *acc;
-    Bank_linked *next;
-
     Bank_linked();
 
-    Account *readUserInfo(std::istream &in);
+    bool insert(int money)
+    {
+        curr.setNext(new Account_node(money, curr.next_node()));
+    }
 
-    Bank_linked *createBank_linked(Bank_linked *head, Account *acc);
-
-    void transfer(size_t from, size_t to, int money);
-
-    std::string showAccount(size_t accountNum);
-
-    Bank_linked *newAccount(Account *acc);
-
+    bool append(int money)
+    {
+        tail.setNext(new Account_node(nullptr));
+        auto *temp = new Account(money);
+        tail.setElement(*temp);
+        tail = tail.next_node();
+        size++;
+        return true;
+    }
 };
 
 #endif
