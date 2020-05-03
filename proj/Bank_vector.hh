@@ -1,60 +1,25 @@
-#include "Bank_vector.h"
+#ifndef ACCOUNT_HH_
+#define BANK_HH_
 
-Bank_vector::Bank_vector(int money){
-	account = new Account(money);
-	}
+#include<list>
+#include<bits/stdc++.h>
+#include "Account.hh"
+using namespace std; 
+
+class Bank_vector{
+private:
+	Account* account;
+	vector<Account*> bank_vector;
+public:
 	
-	
-void Bank_vector::readnmakeAccounts(istream& in){
-	int money;
-	if(!(in>>money)){
-		std::cerr<<"money value must be input"<<std::endl;
-		std::exit(1);
-	}
-	addAccount(money);
-}
+Bank_vector(int money);
+Account* getAccount();
+void readnmakeAccounts(istream& in);
+Account* findAccount(size_t acc);
+void addAccount(int money);
+void deleteAccount(size_t accountNum);
+void transfer(size_t from, size_t to, int money);
 
-Account* Bank_vector::getAccount(){
-	return this->account;
-}
-	
-void Bank_vector::addAccount(int money){
-	Account* newAccount = new Account(money);
-	bank_vector.push_back(newAccount);
-}
-Account* Bank_vector::findAccount(size_t acc){
-	for(unsigned int i = 0; i<bank_vector.size();i++){
-		if(acc == bank_vector[i]->getAccountNum()) return bank_vector[i];
-		else{
-			std::cerr<<"no accound founded"<<endl;
-			std::exit(1);
-		}
-	}
-}
+};
 
-void Bank_vector::deleteAccount(size_t key){
-	for(unsigned int i = 0; i<bank_vector.size();i++){
-		if(key == bank_vector[i]->getAccountNum()) bank_vector[i] == NULL;
-		else{
-			std::cerr<<"no accound founded"<<endl;
-			std::exit(1);
-		}
-	}
-}
-void Bank_vector::transfer(size_t from, size_t to, int money){
-	for(unsigned int i = 0; i<bank_vector.size();i++){
-			if(from == bank_vector[i]->getAccountNum()) bank_vector[i]->withdrawMoney(money);
-			else{
-				std::cerr<<"no accound founded"<<endl;
-				std::exit(1);
-			}
-		}
-	for(unsigned int i = 0; i<bank_vector.size();i++){
-		if(to == bank_vector[i]->getAccountNum()) bank_vector[i]->depositMoney(money);
-		else{
-			std::cerr<<"no accound founded"<<endl;
-			std::exit(1);
-		}
-	}
-}
-
+#endif
