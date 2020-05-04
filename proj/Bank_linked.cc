@@ -20,6 +20,29 @@ Account_node* Bank_linked::find_Account(size_t _unique_ID)
     }
 }
 
+int Bank_linked::getBalance(size_t num){
+  Account_node* acct = find_Account(num);
+  return acct->getAccount().getBalance();
+}
+
+
+
+bool Bank_linked::withdraw(size_t num, int money){
+  if(getBalance(num) < money ){
+    return false;
+  }
+  else{
+    Account_node* acct = find_Account(num);
+    acct->withdraw(money);
+    return true;
+  }
+
+}
+
+void Bank_linked::deposit(size_t num, int money){
+  Account_node* acct = find_Account(num);
+  acct->deposit(money);
+}
 
 //appends new bank account to the end of the list
 bool Bank_linked::append(int money)
@@ -29,7 +52,6 @@ bool Bank_linked::append(int money)
     tail->setAccount(*temp);
     tail = tail->getNext();
     size++;
-    std::cout<<size<<std::endl;
     return true;
 }
 //returns true if transfer is sucessfull, else false
@@ -38,16 +60,13 @@ bool Bank_linked::transfer(size_t from, size_t to, int money)
     if(size < from || size < to){
       return false;
     }
-    Account_node* fromAcc = find_Account(from);
-    Account_node* toAcc = find_Account(to);
-    if(fromAcc->getAccount().getBalance() < money){
+    if(withdraw(from,money) == false){
       return false;
     }
     else{
-      fromAcc->withdraw(money);
-      toAcc->deposit(money);
+      deposit(to,money);
+      return true;
     }
-    return true;
 }
 
 std::string Bank_linked::toString(){
@@ -87,15 +106,16 @@ bool Bank_linked::deleteAccount(size_t acc){
   return false;
 }
 
+
+
+
 int main(){
   Bank_linked test;
   test.append(5);
   test.append(6);
   test.append(7);
   std::cout<<test.toString()<<std::endl;
-  std::cout<< test.deleteAccount(1) <<std::endl;
-  std::cout<< test.deleteAccount(2) <<std::endl;
-  std::cout<< test.deleteAccount(3) <<std::endl;
-  std::cout<<test.toString()<<std::endl;
+
+  std::cout<<sizeof(Bank_linked)<<std::endl;
   return 0;
 }

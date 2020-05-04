@@ -19,6 +19,9 @@ public:
 
     bool append(int money);
     bool transfer(size_t from, size_t to, int money);
+    int getBalance(size_t num);
+    bool withdraw(size_t num, int money);
+    void deposit(size_t num, int money);
     std::string toString();
     bool deleteAccount(size_t acc);
 };

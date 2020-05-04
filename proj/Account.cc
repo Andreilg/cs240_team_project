@@ -63,8 +63,9 @@ std::string Account::toString() const
 
 /*int main(){
   Account test(1);
+  std::cout<<sizeof(test)<<std::endl;
   Account test2(2);
-  std::cout<<test.toString()<<std::endl;
-  std::cout<<test2.toString()<<std::endl;
+  Account arr[] = {test,test2};
+  std::cout<<sizeof(arr)<<std::endl;
   return 0;
 }*/
