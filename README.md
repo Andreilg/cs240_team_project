@@ -22,17 +22,21 @@ The aims of this application are as follows:
   - Expected to scale well with a large amount of accounts
     - Should hold as many accounts as possible
   - *Procedures*
-    - **Get Account Number** is in $O(1)$ in the worst case
-      - Should be immediate
-    - **Add Account** is in $O(n)$ in the worst case
+    - **Add Account** is in O(n) in the worst case
       - Should take a reasonable amount of time
       - Minimum of $100 deposit.
-    - **Delete Account** is in $O(n^2)$ in the worst case
+    - **Delete Account** is in O(n^2) in the worst case
       - Can take a long time; not critical
     - **Find Account** is in $O(n)$ in the worst case
       - Should take a reasonable amount of time
     - **Transfer Money** is in $O(n)$ in the worst case
       - Should take a reasonable amount of time
+    - ***Get Balance** is in $O(1)$ in the worst case
+      - Should be immediate
+    - **Deposit Money** is in $O(1)$ in the worst case
+      - Should be immediate
+    - **Withdraw Money** is in $O(1)$ in the worst case
+      - Should be immediate
 
 - Account
 
