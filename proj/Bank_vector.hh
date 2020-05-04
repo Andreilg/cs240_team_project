@@ -1,5 +1,5 @@
-#ifndef ACCOUNT_HH_
-#define BANK_HH_
+#ifndef BANK_VECTOR_HH_
+#define BANK_VECTOR_HH_
 
 #include<list>
 #include<bits/stdc++.h>
