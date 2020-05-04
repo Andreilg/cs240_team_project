@@ -11,8 +11,15 @@ using namespace std;
 
 //int main(int argc, char* argv[]){
 int main(){
-  Bank_linked xd = new Bank_linked();
+  Bank_linked test();
   fstream file;
   file.open("./test.txt",ios::out);
+  if(file.is_open()){
+    string tp;
+    while(getline(file,tp)){
+      cout<< tp << "\n";
+    }
+  }
+  file.close();
   return 0;
 }
