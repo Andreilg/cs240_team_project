@@ -1,5 +1,5 @@
-#ifndef ACCOUNT_HH_
-#define BANK_HH_
+#ifndef BANK_LINKED_HH_
+#define BANK_LINKED_HH_
 
 #include <list>
 #include "Account.hh"
