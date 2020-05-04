@@ -49,5 +49,12 @@ void Bank_vector::transfer(size_t from, size_t to, int money){
 		std::cerr<<"no accound founded"<<endl;
 		std::exit(1);
 	}
-	
 }
+
+std::string Bank_vector::toString(){
+	for(int i = 0; i < bank_vector.size(); i++)
+	{
+		bank_vector[i]->toString();
+	}
+	return "";
+} 

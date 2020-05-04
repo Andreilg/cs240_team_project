@@ -19,6 +19,7 @@ Account* findAccount(size_t acc);
 void addAccount(int money);
 void deleteAccount(size_t accountNum);
 void transfer(size_t from, size_t to, int money);
+std::string toString();
 
 };
 
