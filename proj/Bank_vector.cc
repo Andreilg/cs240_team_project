@@ -50,7 +50,14 @@ void Bank_vector::transfer(size_t from, size_t to, int money){
 		std::exit(1);
 	}
 }
-
+void Bank_vector::depositMoney(size_t acc, int money){
+	acc --;
+	bank_vector[acc]->depositMoney(money);
+}
+void Bank_vector::withdrawMoney(size_t acc, int money){
+	acc --;
+	bank_vector[acc]->withdrawMoney(money);
+}
 std::string Bank_vector::toString(){
 	std::string ret ="[";
 	for(int i = 0; i < bank_vector.size(); i++)
