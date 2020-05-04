@@ -1,7 +1,7 @@
 #include "Bank_vector.hh"
 
 Bank_vector::Bank_vector(int money){
-	addAccount(money);
+	append(money);
 	}
 
 void Bank_vector::readnmakeAccounts(istream& in){
@@ -10,21 +10,39 @@ void Bank_vector::readnmakeAccounts(istream& in){
 		std::cerr<<"money value must be input"<<std::endl;
 		std::exit(1);
 	}
-	addAccount(money);
+	append(money);
 }
 
-void Bank_vector::addAccount(int money){
+void Bank_vector::append(int money){
 	Account* newAccount = new Account(money);
 	bank_vector.push_back(newAccount);
 }
 
 Account* Bank_vector::findAccount(size_t acc){
-	acc-=1;
+	acc--;
 	if(bank_vector[acc] != NULL) return bank_vector[acc];
 	else{
 		std::cerr<<"no account found"<<endl;
 		std::exit(1);
 	}
+}
+
+int Bank_vector::getBalance(size_t num){
+	return findAccount(num)->getBalance();
+}
+
+void Bank_vector::deposit(size_t acc, int money){
+	acc--;
+	bank_vector[acc]->depositMoney(money);
+}
+
+bool Bank_vector::withdraw(size_t acc, int money){
+	if(getBalance(acc) < money){
+		return false;
+	}
+	acc--;
+	bank_vector[acc]->withdrawMoney(money);
+	return true;
 }
 
 void Bank_vector::deleteAccount(size_t key){
@@ -35,29 +53,16 @@ void Bank_vector::deleteAccount(size_t key){
 		std::exit(1);
 	}
 }
-void Bank_vector::transfer(size_t from, size_t to, int money){
-	from--;
-	to--;
-	if(bank_vector[from]!= NULL) bank_vector[from]->withdrawMoney(money);
-	else{
-		std::cerr<<"no account found"<<endl;
-		std::exit(1);
-	}
 
-	if(bank_vector[from]!= NULL) bank_vector[to]->depositMoney(money);
+bool Bank_vector::transfer(size_t from, size_t to, int money){
+	if(withdraw(from,money) == false) return false;
 	else{
-		std::cerr<<"no account found"<<endl;
-		std::exit(1);
+		deposit(to,money);
+		return true;
 	}
 }
-void Bank_vector::depositMoney(size_t acc, int money){
-	acc --;
-	bank_vector[acc]->depositMoney(money);
-}
-void Bank_vector::withdrawMoney(size_t acc, int money){
-	acc --;
-	bank_vector[acc]->withdrawMoney(money);
-}
+
+
 std::string Bank_vector::toString(){
 	std::string ret ="[";
 	for(int i = 0; i < bank_vector.size(); i++)
@@ -76,9 +81,9 @@ std::string Bank_vector::toString(){
 
 int main(){
 	Bank_vector test(5);
-	test.addAccount(3);
-	test.addAccount(7);
-	test.addAccount(8);
-	test.transfer(1,2,3);
+	test.append(3);
+	test.append(7);
+	test.append(8);
+	test.transfer(1,2,5);
 	std::cout<<test.toString()<<std::endl;
 }
