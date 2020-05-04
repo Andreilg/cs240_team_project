@@ -20,28 +20,32 @@ Account_node *Bank_linked::find_Account(size_t _unique_ID)
     }
 }
 
-int Bank_linked::getBalance(size_t num){
-  Account_node* acct = find_Account(num);
-  return acct->getAccount().getBalance();
+int Bank_linked::getBalance(size_t num)
+{
+    Account_node *acct = find_Account(num);
+    return acct->getAccount().getBalance();
 }
 
 
-
-bool Bank_linked::withdraw(size_t num, int money){
-  if(getBalance(num) < money ){
-    return false;
-  }
-  else{
-    Account_node* acct = find_Account(num);
-    acct->withdraw(money);
-    return true;
-  }
+bool Bank_linked::withdraw(size_t num, int money)
+{
+    if (getBalance(num) < money)
+    {
+        return false;
+    }
+    else
+    {
+        Account_node *acct = find_Account(num);
+        acct->withdraw(money);
+        return true;
+    }
 
 }
 
-void Bank_linked::deposit(size_t num, int money){
-  Account_node* acct = find_Account(num);
-  acct->deposit(money);
+void Bank_linked::deposit(size_t num, int money)
+{
+    Account_node *acct = find_Account(num);
+    acct->deposit(money);
 }
 
 //appends new bank account to the end of the list
@@ -62,18 +66,20 @@ bool Bank_linked::transfer(size_t from, size_t to, int money)
     {
         return false;
     }
-    if(withdraw(from,money) == false){
-      return false;
+    if (!withdraw(from, money))
+    {
+        return false;
     }
-    else{
-      deposit(to,money);
-      return true;
+    else
+    {
+        deposit(to, money);
+        return true;
     }
 }
 
 std::string Bank_linked::toString()
 {
-    std::string ret = "";
+    std::string ret;
     curr = head->getNext();
     while (curr != tail)
     {
@@ -114,8 +120,9 @@ bool Bank_linked::deleteAccount(size_t acc)
     return false;
 }
 
-int Bank_linked::getSize(){
-  return size;
+int Bank_linked::getSize() const
+{
+    return size;
 }
 
 

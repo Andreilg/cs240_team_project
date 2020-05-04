@@ -1,84 +1,102 @@
 #include "Bank_vector.hh"
 
-Bank_vector::Bank_vector(){}
+Bank_vector::Bank_vector()
+= default;
 
-Bank_vector::Bank_vector(int money){
-	append(money);
-	}
-
-void Bank_vector::readnmakeAccounts(istream& in){
-	int money;
-	if(!(in>>money)){
-		std::cerr<<"money value must be input"<<std::endl;
-		std::exit(1);
-	}
-	append(money);
+Bank_vector::Bank_vector(int money)
+{
+    append(money);
 }
 
-void Bank_vector::append(int money){
-	Account* newAccount = new Account(money);
-	bank_vector.push_back(newAccount);
+void Bank_vector::readnmakeAccounts(istream &in)
+{
+    int money;
+    if (!(in >> money))
+    {
+        std::cerr << "money value must be input" << std::endl;
+        std::exit(1);
+    }
+    append(money);
 }
 
-Account* Bank_vector::findAccount(size_t acc){
-	acc--;
-	if(bank_vector[acc] != NULL) return bank_vector[acc];
-	else{
-		std::cerr<<"no account found"<<endl;
-		std::exit(1);
-	}
+void Bank_vector::append(int money)
+{
+    auto *newAccount = new Account(money);
+    bank_vector.push_back(newAccount);
 }
 
-int Bank_vector::getBalance(size_t num){
-	return findAccount(num)->getBalance();
+Account *Bank_vector::findAccount(size_t acc)
+{
+    acc--;
+    if (bank_vector[acc] != nullptr) return bank_vector[acc];
+    else
+    {
+        std::cerr << "no account found" << endl;
+        std::exit(1);
+    }
 }
 
-void Bank_vector::deposit(size_t acc, int money){
-	acc--;
-	bank_vector[acc]->depositMoney(money);
+int Bank_vector::getBalance(size_t num)
+{
+    return findAccount(num)->getBalance();
 }
 
-bool Bank_vector::withdraw(size_t acc, int money){
-	if(getBalance(acc) < money){
-		return false;
-	}
-	acc--;
-	bank_vector[acc]->withdrawMoney(money);
-	return true;
+void Bank_vector::deposit(size_t acc, int money)
+{
+    acc--;
+    bank_vector[acc]->depositMoney(money);
 }
 
-void Bank_vector::deleteAccount(size_t key){
-	key-=1;
-	if(bank_vector[key] != NULL) bank_vector[key] = NULL;
-	else{
-		std::cerr<<"no account found"<<endl;
-		std::exit(1);
-	}
+bool Bank_vector::withdraw(size_t acc, int money)
+{
+    if (getBalance(acc) < money)
+    {
+        return false;
+    }
+    acc--;
+    bank_vector[acc]->withdrawMoney(money);
+    return true;
 }
 
-bool Bank_vector::transfer(size_t from, size_t to, int money){
-	if(withdraw(from,money) == false) return false;
-	else{
-		deposit(to,money);
-		return true;
-	}
+void Bank_vector::deleteAccount(size_t key)
+{
+    key -= 1;
+    if (bank_vector[key] != nullptr) bank_vector[key] = nullptr;
+    else
+    {
+        std::cerr << "no account found" << endl;
+        std::exit(1);
+    }
+}
+
+bool Bank_vector::transfer(size_t from, size_t to, int money)
+{
+    if (!withdraw(from, money)) return false;
+    else
+    {
+        deposit(to, money);
+        return true;
+    }
 }
 
 
-std::string Bank_vector::toString(){
-	std::string ret ="[";
-	for(int i = 0; i < bank_vector.size(); i++)
-	{
-		if(bank_vector[i] == NULL){
-			ret+= "NULL, ";
-		}
-		else{
-			ret+=bank_vector[i]->toString();
-			ret+= ", ";
-		}
-	}
-	ret+="]";
-	return ret;
+std::string Bank_vector::toString()
+{
+    std::string ret = "[";
+    for (auto & i : bank_vector)
+    {
+        if (i == nullptr)
+        {
+            ret += "NULL, ";
+        }
+        else
+        {
+            ret += i->toString();
+            ret += ", ";
+        }
+    }
+    ret += "]";
+    return ret;
 }
 
 /*int main(){
