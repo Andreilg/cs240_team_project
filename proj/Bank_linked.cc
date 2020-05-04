@@ -123,7 +123,6 @@ int main(){
   test.append(6);
   test.append(7);
   std::cout<<test.toString()<<std::endl;
-
   std::cout<<sizeof(Bank_linked)<<std::endl;
   return 0;
 }
