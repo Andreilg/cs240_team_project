@@ -31,7 +31,7 @@ The aims of this application are as follows:
       - Should take a reasonable amount of time
     - **Transfer Money** is in O(n) in the worst case
       - Should take a reasonable amount of time
-    - ***Get Balance** is in O(1) in the worst case
+    - **Get Balance** is in O(1) in the worst case
       - Should be immediate
     - **Deposit Money** is in O(1) in the worst case
       - Should be immediate
