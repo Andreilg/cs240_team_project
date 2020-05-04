@@ -63,3 +63,7 @@ The aims of this application are as follows:
 ## Results
 
 ***performance numbers as either tables or graphs.***
+### Size
+- *Account* (size_t (8 bytes) + int (4 bytes) + padding (4 bytes) = *16 bytes*)
+- *Account Node* (Account (16 bytes) + Pointer (8 bytes) = *24 bytes*)
+- *Bank Overhead (Linked List) (3 Pointers (8 bytes * 4 = 24 bytes) + int (4 bytes) + padding (4 bytes) + 2 Helper Nodes (2 * 24 bytes) = *80 bytes*
