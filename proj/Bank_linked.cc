@@ -114,7 +114,9 @@ bool Bank_linked::deleteAccount(size_t acc)
     return false;
 }
 
-
+int Bank_linked::getSize(){
+  return size;
+}
 
 
 /*int main(){

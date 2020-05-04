@@ -37,7 +37,7 @@ int Account::getBalance() const
 void Account::depositMoney(int moneyIn)
 {
     this->money += moneyIn;
-    std::cout << "Your current balance :: " << this->money << std::endl;
+    //std::cout << "Your current balance :: " << this->money << std::endl;
 }
 
 void Account::withdrawMoney(int moneyOut)
@@ -45,14 +45,14 @@ void Account::withdrawMoney(int moneyOut)
     if ((this->money - moneyOut) >= 0)
     {
         this->money -= moneyOut;
-        std::cout << "Money deposited successfully" << std::endl;
-        std::cout << "Your current balance :: " << this->money << std::endl;
+        //std::cout << "Money deposited successfully" << std::endl;
+        //std::cout << "Your current balance :: " << this->money << std::endl;
     }
     else
     {
-        std::cout << "You cannot withdraw that amount of money, "
+        /*std::cout << "You cannot withdraw that amount of money, "
                      "the value is greater than your balance" << std::endl;
-        std::cout << "Your current balance :: " << this->money << std::endl;
+        std::cout << "Your current balance :: " << this->money << std::endl;*/
     }
 }
 

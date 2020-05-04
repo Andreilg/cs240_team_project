@@ -24,7 +24,7 @@ public:
     bool withdraw(size_t num, int money);
     void deposit(size_t num, int money);
     std::string toString();
-
+    int getSize();
     bool deleteAccount(size_t acc);
 };
 
