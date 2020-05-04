@@ -27,15 +27,15 @@ The aims of this application are as follows:
       - Minimum of $100 deposit.
     - **Delete Account** is in O(n^2) in the worst case
       - Can take a long time; not critical
-    - **Find Account** is in $O(n)$ in the worst case
+    - **Find Account** is in O(n) in the worst case
       - Should take a reasonable amount of time
-    - **Transfer Money** is in $O(n)$ in the worst case
+    - **Transfer Money** is in O(n) in the worst case
       - Should take a reasonable amount of time
-    - ***Get Balance** is in $O(1)$ in the worst case
+    - ***Get Balance** is in O(1) in the worst case
       - Should be immediate
-    - **Deposit Money** is in $O(1)$ in the worst case
+    - **Deposit Money** is in O(1) in the worst case
       - Should be immediate
-    - **Withdraw Money** is in $O(1)$ in the worst case
+    - **Withdraw Money** is in O(1) in the worst case
       - Should be immediate
 
 - Account
@@ -45,19 +45,19 @@ The aims of this application are as follows:
   - Not expected to scale well with a large amount of money
 
     - Customers are willing to wait longer for large transactions since they tend to require bank intervention anyway.
-    - Number doesn't need to be too large ($2^{32}$ bits should be fine)
+    - Number doesn't need to be too large (2^{32} bits should be fine)
 
   - Contains unique ID number
 
   - *Procedures*
 
-    - **Get Balance** is in $O(1)$ in the worst case
+    - **Get Balance** is in O(1) in the worst case
       - Should be immediate
-    - **Get Account Number** is in $O(1)$ in the worst case
+    - **Get Account Number** is in O(1) in the worst case
       - Should be immediate
-    - **Deposit Money** is in $O(1)$ in the worst case
+    - **Deposit Money** is in O(1) in the worst case
       - Should be immediate
-    - **Withdraw Money** is in $O(1)$ in the worst case
+    - **Withdraw Money** is in O(1) in the worst case
       - Should be immediate
 
 ## Results
