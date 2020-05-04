@@ -8,12 +8,10 @@ using namespace std;
 
 class Bank_vector{
 private:
-	Account* account;
 	vector<Account*> bank_vector;
 public:
 	
 Bank_vector(int money);
-Account* getAccount();
 void readnmakeAccounts(istream& in);
 Account* findAccount(size_t acc);
 void addAccount(int money);

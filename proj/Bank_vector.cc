@@ -1,7 +1,7 @@
 #include "Bank_vector.hh"
 
 Bank_vector::Bank_vector(int money){
-	account = new Account(money);
+	addAccount(money);
 	}
 	
 void Bank_vector::readnmakeAccounts(istream& in){
@@ -11,10 +11,6 @@ void Bank_vector::readnmakeAccounts(istream& in){
 		std::exit(1);
 	}
 	addAccount(money);
-}
-
-Account* Bank_vector::getAccount(){
-	return this->account;
 }
 	
 void Bank_vector::addAccount(int money){
