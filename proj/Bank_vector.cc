@@ -1,5 +1,7 @@
 #include "Bank_vector.hh"
 
+Bank_vector::Bank_vector(){}
+
 Bank_vector::Bank_vector(int money){
 	append(money);
 	}
@@ -79,11 +81,11 @@ std::string Bank_vector::toString(){
 	return ret;
 }
 
-int main(){
+/*int main(){
 	Bank_vector test(5);
 	test.append(3);
 	test.append(7);
 	test.append(8);
 	test.transfer(1,2,5);
 	std::cout<<test.toString()<<std::endl;
-}
+}*/

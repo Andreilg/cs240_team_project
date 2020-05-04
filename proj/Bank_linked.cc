@@ -117,7 +117,7 @@ bool Bank_linked::deleteAccount(size_t acc)
 
 
 
-int main(){
+/*int main(){
   Bank_linked test;
   test.append(5);
   test.append(6);
@@ -125,4 +125,4 @@ int main(){
   std::cout<<test.toString()<<std::endl;
   std::cout<<sizeof(Bank_linked)<<std::endl;
   return 0;
-}
+}*/

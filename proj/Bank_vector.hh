@@ -12,6 +12,7 @@ private:
 public:
 
 Bank_vector(int money);
+Bank_vector();
 void readnmakeAccounts(istream& in);
 Account* findAccount(size_t acc);
 void append(int money);
