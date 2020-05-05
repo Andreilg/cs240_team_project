@@ -72,6 +72,11 @@ The aims of this application are as follows:
 | Linked List (Average Case) | 0.002ms     | 0.559ms        | 1.315ms      | 2.069ms        | 2.079ms     | 1.336ms       | 1.296ms        |
 | Vector (Average Case)      | 0.002ms     | 0.001ms        | 0.001ms      | 0.001ms        | 0.001ms     | 0.001ms       | 0.001ms        |
 
+| Growth Rate                | Add Account | Delete Account | Find Account | Transfer Money | Get Balance | Deposit Money | Withdraw Money |
+|----------------------------|-------------|----------------|--------------|----------------|-------------|---------------|----------------|
+| Linked List (Average Case) | Θ(1)        | Θ(n)           | Θ(n)         | Θ(n)           | Θ(n)        | Θ(n)          | Θ(n)           |
+| Vector (Average Case)      | Θ(1)        | Θ(1)           | Θ(1)         | Θ(1)           | Θ(1)        | Θ(1)          | Θ(1)           |
+
 ### Size
 - **Account** (size_t (8 bytes) + int (4 bytes) + padding (4 bytes) = **16 bytes**)
 - **Account Node** (Account (16 bytes) + Pointer (8 bytes) = **24 bytes**)
