@@ -59,6 +59,11 @@ The aims of this application are as follows:
       - Should be immediate
     - **Withdraw Money** is in O(1) in the worst case
       - Should be immediate
+## Instructions
+1. Run `$ make` in bash
+2. Generate test data by running `$ ./generator <size of input>`
+3. Run `$ ./bank` to see results
+4. Redo step 2 and 3 if you wish to use different input size
 
 ## Results
 ### Time
