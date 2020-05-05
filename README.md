@@ -61,8 +61,12 @@ The aims of this application are as follows:
       - Should be immediate
 
 ## Results
+### Time
+| 1000 Elements              | Add Account | Delete Account | Find Account | Transfer Money | Get Balance | Deposit Money | Withdraw Money |
+|----------------------------|-------------|----------------|--------------|----------------|-------------|---------------|----------------|
+| Linked List (Average Case) | 0.002ms     | 0.006ms        | 0.015ms      | 0.013ms        | 0.013ms     | 0.013ms       | 0.013ms        |
+| Vector (Average Case)      | 0.002ms     | 0.001ms        | 0.001ms      | 0.001ms        | 0.001ms     | 0.001ms       | 0.001ms        |
 
-***performance numbers as either tables or graphs.***
 ### Size
 - **Account** (size_t (8 bytes) + int (4 bytes) + padding (4 bytes) = **16 bytes**)
 - **Account Node** (Account (16 bytes) + Pointer (8 bytes) = **24 bytes**)
