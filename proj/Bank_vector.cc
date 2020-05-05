@@ -25,7 +25,7 @@ void Bank_vector::append(int money)
     bank_vector.push_back(newAccount);
 }
 
-Account *Bank_vector::findAccount(size_t acc)
+Account *Bank_vector::find_Account(size_t acc)
 {
     acc--;
     if (bank_vector[acc] != nullptr) return bank_vector[acc];
@@ -38,7 +38,7 @@ Account *Bank_vector::findAccount(size_t acc)
 
 int Bank_vector::getBalance(size_t num)
 {
-    return findAccount(num)->getBalance();
+    return find_Account(num)->getBalance();
 }
 
 void Bank_vector::deposit(size_t acc, int money)

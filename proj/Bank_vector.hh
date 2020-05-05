@@ -19,7 +19,7 @@ public:
 
     void readnmakeAccounts(istream &in);
 
-    Account *findAccount(size_t acc);
+    Account *find_Account(size_t acc);
 
     void append(int money);
 
