@@ -62,7 +62,7 @@ The aims of this application are as follows:
 
 ## Results
 ### Time
-| 1000 Elements              | Add Account | Delete Account | Find Account | Transfer Money | Get Balance | Deposit Money | Withdraw Money |
+| Elements (1000)            | Add Account | Delete Account | Find Account | Transfer Money | Get Balance | Deposit Money | Withdraw Money |
 |----------------------------|-------------|----------------|--------------|----------------|-------------|---------------|----------------|
 | Linked List (Average Case) | 0.002ms     | 0.006ms        | 0.015ms      | 0.013ms        | 0.013ms     | 0.013ms       | 0.013ms        |
 | Vector (Average Case)      | 0.002ms     | 0.001ms        | 0.001ms      | 0.001ms        | 0.001ms     | 0.001ms       | 0.001ms        |
