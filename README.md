@@ -65,7 +65,7 @@ The aims of this application are as follows:
 | Growth Rate                | Add Account | Delete Account | Find Account | Transfer Money | Get Balance | Deposit Money | Withdraw Money |
 |----------------------------|-------------|----------------|--------------|----------------|-------------|---------------|----------------|
 | Linked List (Average Case) | Θ(1)        | Θ(n)           | Θ(n)         | Θ(n)           | Θ(n)        | Θ(n)          | Θ(n)           |
-| Vector (Average Case)      | Θ(1)        | Θ(1)           | Θ(1)         | Θ(1)           | Θ(1)        | Θ(1)          | Θ(1)           |
+| Vector (Average Case)      | Ω(1) O(n)   | Θ(1)           | Θ(1)         | Θ(1)           | Θ(1)        | Θ(1)          | Θ(1)           |
 
 | Elements (1000)            | Add Account | Delete Account | Find Account | Transfer Money | Get Balance | Deposit Money | Withdraw Money |
 |----------------------------|-------------|----------------|--------------|----------------|-------------|---------------|----------------|
